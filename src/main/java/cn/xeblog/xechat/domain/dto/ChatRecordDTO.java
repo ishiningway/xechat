@@ -40,6 +40,57 @@ public class ChatRecordDTO {
      */
     private String sendTime;
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public MessageTypeEnum getType() {
+        return type;
+    }
+
+    public void setType(MessageTypeEnum type) {
+        this.type = type;
+    }
+
+    public String getSendTime() {
+        return sendTime;
+    }
+
+    public void setSendTime(String sendTime) {
+        this.sendTime = sendTime;
+    }
+
+    @Override
+    public String toString() {
+        return "ChatRecordDTO{" +
+                "user=" + user +
+                ", message='" + message + '\'' +
+                ", image='" + image + '\'' +
+                ", type=" + type +
+                ", sendTime='" + sendTime + '\'' +
+                '}';
+    }
+
     public static ChatRecordDTO toChatRecordDTO(MessageVO messageVO) {
         if (null == messageVO) {
             return null;

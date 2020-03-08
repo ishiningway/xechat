@@ -35,6 +35,7 @@ public class MessageServiceImpl implements MessageService {
     @Resource
     private RobotService robotService;
 
+
     @Override
     public void sendErrorMessage(Code code, User user) {
         log.info("发送错误信息 -> {} -> {}", code, user);

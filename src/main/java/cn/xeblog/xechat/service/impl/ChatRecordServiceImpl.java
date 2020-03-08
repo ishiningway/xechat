@@ -16,6 +16,8 @@ import org.springframework.stereotype.Service;
 import java.io.*;
 import java.util.*;
 
+import static cn.xeblog.xechat.enums.MessageTypeEnum.*;
+
 /**
  * @author yanpanyi
  * @date 2019/4/4
@@ -46,7 +48,7 @@ public class ChatRecordServiceImpl implements ChatRecordService {
                 "UTF-8"))) {
             out.write(formatContent(chatRecordDTO));
         } catch (IOException e) {
-            log.error("添加聊天记录异常，error ->", e);
+            //log.error("添加聊天记录异常，error ->", e);
         }
     }
 
@@ -158,7 +160,7 @@ public class ChatRecordServiceImpl implements ChatRecordService {
      */
     private void formatUserMsg(StringBuffer sb, ChatRecordDTO chatRecordDTO) {
         final User user = chatRecordDTO.getUser();
-        String tag = chatRecordDTO.getType() == MessageTypeEnum.ROBOT ? "[系统机器人] " : "";
+        String tag = chatRecordDTO.getType() == ROBOT ? "[系统机器人] " : "";
         sb.append("#### [");
         sb.append(chatRecordDTO.getSendTime());
         sb.append("] ");
